@@ -98,3 +98,16 @@ margin-left: 38px;
 .sharp:hover{
 background-color: #33373b;
 }
+
+.piano_key.sharp.letter:before{
+    content: attr(data-note);
+    position: absolute;
+    top: -30px;
+    width: 50px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 40px;
+    text-align: center;
+    color: cyan;
+
+}
