@@ -66,6 +66,7 @@ margin-left: 30px;
     border-top: none;
     cursor: pointer;
     transition: 0.2s;
+    z-index: 2;
 }
 .piano_key:hover{
     background-color:rgba(255, 255, 255, 0.514);
@@ -79,6 +80,8 @@ margin-left: 30px;
     top: 0;
     left: 325px;
     top: -10px;
+    right: 325px;
+    justify-content: space-between;
       
 }
 
@@ -92,14 +95,27 @@ margin-left: 30px;
     border-radius: 0px 0px 10px 10px;
     border: none;
 }
-.sharp + .sharp{
-margin-left: 38px;
-}
+
 .sharp:hover{
 background-color: #33373b;
 }
 
-.piano_key.sharp.letter:before{
+
+
+
+
+.piano_key:before{
+    content: attr(data-note);
+    position: absolute;
+    bottom: -30px;
+    width: 70px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 40px;
+    text-align: center;
+    color:  rgb(255, 0, 106);
+}
+.piano_key.sharp:before{
     content: attr(data-note);
     position: absolute;
     top: -30px;
@@ -108,6 +124,27 @@ background-color: #33373b;
     font-size: 22px;
     line-height: 40px;
     text-align: center;
-    color: cyan;
-
+    color: rgb(255, 0, 106);
+}
+.letter::before{
+    content: attr(data-letter);
+    position: absolute;
+    bottom: -30px;
+    width: 80px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 40px;
+    text-align: center;
+    color:   rgb(255, 0, 106);
+}
+.sharp.letter::before{
+    content: attr(data-letter);
+    position: absolute;
+    top: -30px;
+    width: 50px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 40px;
+    text-align: center;
+    color: rgb(255, 0, 106);
 }
